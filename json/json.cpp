@@ -7,31 +7,31 @@
 
 using namespace std;
 
-std::atomic_int jsonNode::totolSize = 0;
-
-void * jsonNode::operator new(size_t size) {
-	void *	ptr = malloc(size);
-	if (ptr) {
-		totolSize += size;
-
-		cout << "malloc:" << size << "totol:" << totolSize << endl;
-		return ptr;
-	}
-	else {
-		throw std::bad_alloc();
-	}
-}
-void * jsonNode::operator new[](size_t size) {
-	return operator new(size);
-}
-void jsonNode::operator delete(void * ptr, size_t size) {
-	totolSize -= size;
-	cout << "free:" << size << "totol:" << totolSize << endl;
-	free(ptr);
-}
-void jsonNode::operator delete[](void * ptr, size_t size) {
-	return operator delete(ptr, size);
-}
+//std::atomic_int jsonNode::totolSize = 0;
+//
+//void * jsonNode::operator new(size_t size) {
+//	void *	ptr = malloc(size);
+//	if (ptr) {
+//		totolSize += size;
+//
+//		cout << "malloc:" << size << "totol:" << totolSize << endl;
+//		return ptr;
+//	}
+//	else {
+//		throw std::bad_alloc();
+//	}
+//}
+//void * jsonNode::operator new[](size_t size) {
+//	return operator new(size);
+//}
+//void jsonNode::operator delete(void * ptr, size_t size) {
+//	totolSize -= size;
+//	cout << "free:" << size << "totol:" << totolSize << endl;
+//	free(ptr);
+//}
+//void jsonNode::operator delete[](void * ptr, size_t size) {
+//	return operator delete(ptr, size);
+//}
 
 static const unsigned char firstByteMark[7] = { 0x00, 0x00, 0xC0, 0xE0, 0xF0, 0xF8, 0xFC };
 json::json(const char * str){
@@ -385,7 +385,7 @@ void print_json(jsonNode * node, int space)
 			cout <<  (node->jsonBool ? "true" : "false");
 			break;
 		case jsonNode::JSON_NULL:
-			cout << "NULL";
+			cout << "null";
 			break;
 		case jsonNode::JSON_NUMBER:
 			cout <<  node->jsonNumber;

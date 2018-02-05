@@ -7,12 +7,12 @@ class jsonNode
 {
 public:
 
-	static std::atomic_int totolSize;
+	//static std::atomic_int totolSize;
 
-	void * operator new(size_t size);
-	void * operator new[](size_t size);
-	void operator delete(void * ptr, size_t size);
-	void operator delete[](void * ptr, size_t size);
+	//void * operator new(size_t size);
+	//void * operator new[](size_t size);
+	//void operator delete(void * ptr, size_t size);
+	//void operator delete[](void * ptr, size_t size);
 
 	enum NODETYPE
 	{

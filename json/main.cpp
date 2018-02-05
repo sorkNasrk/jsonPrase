@@ -36,11 +36,11 @@ int main(int argc, char ** argv)
 
 	//cout << buf << endl;
 	
-	cout << "--------------------" << endl;
+	//cout << "--------------------" << endl;
 	json * dos = new json(buf);
 	print_json(dos->getNode());
 	delete dos;
-	cout << "--------------------" << endl;
+	//cout << "--------------------" << endl;
 	//system("pause");
     return 0;
 }
