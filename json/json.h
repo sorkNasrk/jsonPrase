@@ -38,12 +38,14 @@ public:
 };
 
 
-class json
+class json final
 {
 public:
 	json(const char * str);
 	jsonNode * parse(const char * str);
 	jsonNode * getNode() { return data; }
+	json(const json &) = delete;
+	json &operator=(const json &) = delete;
 	~json();
 private:
 	static const char * skip(const char * str);

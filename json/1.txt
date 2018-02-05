@@ -1,4 +1,5 @@
-
+filename:E:\vsprojects\jsonPrase\Debug\json
+file size:3778
 {
 	"albumArray":{
 		"319281600":{
